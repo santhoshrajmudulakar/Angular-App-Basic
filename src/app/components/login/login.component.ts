@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
       .then(success => {
         console.log(":: login ::",success);
         this.router.navigate(['/components/home']);
-        // this.generateVoucher();
+        
       })
     }
   }

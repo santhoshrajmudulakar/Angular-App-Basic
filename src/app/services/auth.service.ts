@@ -1,9 +1,15 @@
 import { Injectable } from '@angular/core';
 
+
+
+
 @Injectable()
 export class AuthService {
 
   public auth : boolean = false;
+
+
+
   constructor() { }
   // @todo api integration
   login(username: string, password: string): Promise<boolean> {
