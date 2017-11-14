@@ -14,7 +14,7 @@ export class AuthService {
   // @todo api integration
   login(username: string, password: string): Promise<boolean> {
     return new Promise((resolve, reject) => {
-      if(username == 'admin' && password == 'admin321')
+      if(username == 'admin' && password == 'admin')
        {
         localStorage.setItem('auth', username);
          this.auth = true;
