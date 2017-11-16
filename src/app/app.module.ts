@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { routing } from './app.routing';
 
@@ -19,7 +20,8 @@ import { AuthService } from './services/auth.service'
   ],
   imports: [
     BrowserModule,
-    routing
+    routing,
+     FormsModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
