@@ -1,25 +1,25 @@
 import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
 
 
 
 
 @Injectable()
 export class AuthService {
+  constructor(private http: Http) {
 
-  public auth : boolean = false;
-
-
-
-  constructor() { }
-  // @todo api integration
-  login(username: string, password: string): Promise<boolean> {
-    return new Promise((resolve, reject) => {
-      if(username == 'admin' && password == 'admin')
-       {
-        localStorage.setItem('auth', username);
-         this.auth = true;
-         resolve(true);
-       }
-    });
+   }
+  
+  GetPosts(){
+    return this.http.get('https://jsonplaceholder.typicode.com/posts')
+    .map(result => result.json());
+    
   }
-}
+
+  GetPostAsPerId(Id: any){
+    return this.http.get('https://jsonplaceholder.typicode.com/posts' + Id)
+    .map(result => result.json());
+  }
+
+  }

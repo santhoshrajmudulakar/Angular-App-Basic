@@ -1,4 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
+
+
 import { NgModule } from '@angular/core';
 
 import { routing } from './app.routing';
@@ -19,6 +23,8 @@ import { AuthService } from './services/auth.service'
   ],
   imports: [
     BrowserModule,
+    HttpModule,
+    FormsModule,
     routing
   ],
   providers: [AuthService],

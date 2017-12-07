@@ -1,16 +1,26 @@
 <div class="container">
-    <form>
-        <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" class="form-control" name="username" ([ngModel])="username" />
-        </div>
+    <h1 class="text-center">API Integration</h1>
+    
+    <h1>{{ name }}</h1>
 
-        <div class="form-group">
-            <label for="username">Password</label>
-            <input type="text" class="form-control" name="password" ([ngModel])="password" />
-        </div>
-
-        <button (click)="login()" type="button" class="btn btn-primary">SUBMIT</button>
-        <!-- [routerLink]="['../../components/home']" -->
-    </form>
+    <div>
+        <table *ngFor="let list of data">
+             <tr>
+                <td>ID:</td>     
+                 <td>{{ list.id }}</td>
+            </tr>         
+            <tr>
+                <td>UserID:</td>     
+                 <td>{{ list.userId }}</td>
+            </tr>         
+            <tr>
+                <td>Title</td>     
+                 <td>{{ list.title }}</td>
+            </tr>     
+            <tr>
+                <td>Body</td>     
+                 <td>{{ list.body }}</td>
+            </tr>                   
+        </table>
+    </div>
 </div>
