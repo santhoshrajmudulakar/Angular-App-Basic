@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { routing } from './app.routing';
 
@@ -23,9 +24,14 @@ import { AuthService } from './services/auth.service'
   ],
   imports: [
     BrowserModule,
+<<<<<<< HEAD
     HttpModule,
     FormsModule,
     routing
+=======
+    routing,
+     FormsModule
+>>>>>>> 2f5c0cf9b38122b7934aaffa67f621dc1e9506da
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
