@@ -8,25 +8,40 @@ import { AuthService } from '../../services/auth.service';
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  encapsulation: ViewEncapsulation.None
+ 
 })
 export class LoginComponent implements OnInit {
 
   name: string;
   data: any;
 
-  constructor(private authService: AuthService, private router: Router) {
+  //Get one from list
+  PostId: string;
+  SinglePost: any;
+
+  constructor(private authService: AuthService) {
     this.name = "List";
     this.authService.GetPosts()
     .subscribe(posts => { this.data = posts }); 
+
+    //Get one from list
+    this.PostId = "0";
+    this.SinglePost = {
+      id:'',
+      userId:'',
+      title:'',
+      body:'',
+    }
+   }
+
+
+   //Get one from list
+   GetPost(){
+     this.authService.GetPostAsPerId(this.PostId)
+     .subscribe(post => {this.SinglePost = post });
    }
 
   ngOnInit() {
   }
   
-
-  }
-
-  
-
 }

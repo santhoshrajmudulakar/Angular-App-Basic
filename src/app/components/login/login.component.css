@@ -1,0 +1,17 @@
+.list-wrapper{
+       
+    margin-bottom: 20px;
+    
+    
+}
+.table{
+    height: 800px;
+    overflow: auto;
+
+}
+.list-wrapper tr{
+    padding-bottom: 15px;
+}
+.list-wrapper tr td{
+    font-size: 15px;
+}
