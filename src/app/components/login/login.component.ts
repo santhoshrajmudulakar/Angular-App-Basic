@@ -12,34 +12,25 @@ import { AuthService } from '../../services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  name: string;
+  
   data: any;
+  showId = false;
+  
 
-  //Get one from list
-  PostId: string;
-  SinglePost: any;
 
   constructor(private authService: AuthService) {
-    this.name = "List";
+    
     this.authService.GetPosts()
     .subscribe(posts => { this.data = posts }); 
 
-    //Get one from list
-    this.PostId = "0";
-    this.SinglePost = {
-      id:'',
-      userId:'',
-      title:'',
-      body:'',
-    }
+   
    }
 
+   toggleId() {
+    this.showId = !this.showId;
+  }
+
    
-   //Get one from list
-   GetPost(){
-     this.authService.GetPostAsPerId(this.PostId)
-     .subscribe(post => {this.SinglePost = post });
-   }
 
   ngOnInit() {
   }
