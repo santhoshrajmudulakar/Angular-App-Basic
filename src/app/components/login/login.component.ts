@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
     }
    }
 
-
+   
    //Get one from list
    GetPost(){
      this.authService.GetPostAsPerId(this.PostId)
